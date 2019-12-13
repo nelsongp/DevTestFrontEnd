@@ -1,7 +1,13 @@
 <template>
     <div class="container">
         <h2>Agregar Producto</h2>
-        <form class="form-horizontal">
+          <p v-if="errors.length" class="alert alert-danger" role="alert">
+            <b>Por favor, corrija el(los) siguiente(s) error(es):</b>
+            <ul>
+            <li v-for="error in errors" :key="error">{{ error }}</li>
+            </ul>
+        </p>
+        <form class="form-horizontal" @submit.prevent="checkForm">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="txtEmpresa">Empresa:</label>
                 <div class="col-sm-10">
@@ -58,9 +64,10 @@ export default {
     name: "Products",
     data(){
         return {
+            errors: [],
             moneyData: [],
             product: {
-                empresa: "",
+                empresa: null,
                 titulo_producto: "",
                 descripcion: "",
                 precio_regular: "",
@@ -82,6 +89,11 @@ export default {
     methods: {
         processFile(event){
             this.url = event.target.files[0];
+        },
+        checkForm: function(e){
+            if(!this.product.empresa){
+                this.errors.push("Nombre de empresa obligatorio");
+            }
         }
     }
 }
