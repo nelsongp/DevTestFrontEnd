@@ -1,0 +1,12 @@
+{
+    "moneyTypes": [
+        {
+            "value": "DR",
+            "name" : "Dollar"
+        },
+        {
+            "value": "LB",
+            "name": "Libra"
+        }
+    ]
+}
