@@ -36,7 +36,7 @@
     "file-loader": "^1.1.4",
     "jsdom": "^15.2.1",
     "jsdom-global": "^3.0.2",
-    "mocha": "^6.2.2",
+    "mocha": "^10.2.0",
     "mocha-webpack": "^1.1.0",
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.4.4",
